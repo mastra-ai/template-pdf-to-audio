@@ -1,5 +1,5 @@
 import { Agent } from '@mastra/core/agent';
-import { openai } from '@ai-sdk/openai';
+import { anthropic } from '@ai-sdk/anthropic';
 import { OpenAIVoice } from '@mastra/voice-openai';
 
 export const textToAudioAgent = new Agent({
@@ -55,7 +55,7 @@ Generate audio that:
 
 The audio should sound natural and professional, making the content easily accessible through listening.
   `,
-  model: openai('gpt-4o'),
+  model: anthropic(process.env.MODEL ?? "claude-3-5-sonnet-20240620"),
   voice: new OpenAIVoice({
     speechModel: {
       name: 'tts-1-hd',
