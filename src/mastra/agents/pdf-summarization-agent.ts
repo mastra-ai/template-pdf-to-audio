@@ -102,7 +102,7 @@ You can provide audio versions of your summaries using:
 
 Always provide summaries that would allow someone to understand the document's core value without reading the full text, whether consumed in text or audio format.
   `,
-  model: openai('gpt-4.1-mini'), // Large context window model for summarization
+  model: openai(process.env.MODEL ?? "gpt-4.1"), // Large context window model for summarization
   voice: new OpenAIVoice({
     speechModel: {
       name: 'tts-1-hd',

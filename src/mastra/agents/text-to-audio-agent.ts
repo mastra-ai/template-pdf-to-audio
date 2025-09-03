@@ -55,7 +55,7 @@ Generate audio that:
 
 The audio should sound natural and professional, making the content easily accessible through listening.
   `,
-  model: openai('gpt-4o'),
+  model: openai(process.env.MODEL ?? "gpt-4.1"),
   voice: new OpenAIVoice({
     speechModel: {
       name: 'tts-1-hd',

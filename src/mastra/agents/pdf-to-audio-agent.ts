@@ -74,7 +74,7 @@ You also have built-in voice capabilities for:
 
 Always be helpful and provide clear feedback about the process and results.
   `,
-  model: openai('gpt-4o'),
+  model: openai(process.env.MODEL ?? "gpt-4.1"),
   tools: {
     pdfFetcherTool,
     generateAudioFromTextTool,
