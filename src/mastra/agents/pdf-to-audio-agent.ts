@@ -1,4 +1,4 @@
-import { openai } from '@ai-sdk/openai';
+import { google } from '@ai-sdk/google';
 import { Agent } from '@mastra/core/agent';
 import { OpenAIVoice } from '@mastra/voice-openai';
 import { pdfFetcherTool } from '../tools/download-pdf-tool';
@@ -74,7 +74,7 @@ You also have built-in voice capabilities for:
 
 Always be helpful and provide clear feedback about the process and results.
   `,
-  model: openai('gpt-4o'),
+  model: google(process.env.MODEL ?? "gemini-2.5-pro"),
   tools: {
     pdfFetcherTool,
     generateAudioFromTextTool,

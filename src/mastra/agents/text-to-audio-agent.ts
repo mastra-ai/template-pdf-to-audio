@@ -1,5 +1,5 @@
 import { Agent } from '@mastra/core/agent';
-import { openai } from '@ai-sdk/openai';
+import { google } from '@ai-sdk/google';
 import { OpenAIVoice } from '@mastra/voice-openai';
 
 export const textToAudioAgent = new Agent({
@@ -55,7 +55,7 @@ Generate audio that:
 
 The audio should sound natural and professional, making the content easily accessible through listening.
   `,
-  model: openai('gpt-4o'),
+  model: google(process.env.MODEL ?? "gemini-2.5-pro"),
   voice: new OpenAIVoice({
     speechModel: {
       name: 'tts-1-hd',
