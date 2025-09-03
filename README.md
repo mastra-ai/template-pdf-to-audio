@@ -15,7 +15,7 @@ This template showcases a powerful workflow for making PDF documents accessible 
 ### Workflow
 
 1. **Input**: PDF URL + Voice preferences (speaker, speed)
-2. **Download & Summarize**: Fetch PDF, extract text, and generate AI summary using OpenAI GPT-4.1 Mini
+2. **Download & Summarize**: Fetch PDF, extract text, and generate AI summary using Groq GPT-4.1 Mini
 3. **Generate Audio**: Convert the summary to high-quality audio using voice synthesis
 
 ### Key Benefits
@@ -29,7 +29,7 @@ This template showcases a powerful workflow for making PDF documents accessible 
 ## Prerequisites
 
 - Node.js 20.9.0 or higher
-- OpenAI API key (for both summarization and voice synthesis)
+- Groq API key (for both summarization and voice synthesis)
 
 ## Setup
 
@@ -49,7 +49,7 @@ This template showcases a powerful workflow for making PDF documents accessible 
    ```
 
    ```env
-   OPENAI_API_KEY="your-openai-api-key-here"
+   GROQ_API_KEY="your-openai-api-key-here"
    ```
 
 3. **Run the example:**
@@ -213,7 +213,7 @@ console.log(`Audio generated: ${audioResult.estimatedDuration} seconds duration`
 
 ## Features
 
-- ✅ **Professional Voice Synthesis**: High-quality TTS using OpenAI's voice models
+- ✅ **Professional Voice Synthesis**: High-quality TTS using Groq's voice models
 - ✅ **Multiple Voice Options**: Choose from alloy, echo, fable, onyx, nova, shimmer voices
 - ✅ **Configurable Speech**: Adjust speaking speed from 0.25x to 4.0x
 - ✅ **AI Summarization**: Intelligent content compression for focused audio
@@ -253,9 +253,9 @@ This template uses a **pure JavaScript approach** for PDF processing:
    - 🔧 No system dependencies
    - ✅ Works out of the box
 
-2. **AI Summarization**: Uses OpenAI GPT-4.1 Mini for intelligent content compression
+2. **AI Summarization**: Uses Groq GPT-4.1 Mini for intelligent content compression
 
-3. **Voice Synthesis**: High-quality TTS using OpenAI's voice models
+3. **Voice Synthesis**: High-quality TTS using Groq's voice models
 
 ### Why This Approach?
 
@@ -270,7 +270,7 @@ This template uses a **pure JavaScript approach** for PDF processing:
 ### Environment Variables
 
 ```bash
-OPENAI_API_KEY=your_openai_api_key_here
+GROQ_API_KEY=your_openai_api_key_here
 ```
 
 ### Voice Customization
@@ -280,10 +280,10 @@ You can customize voice settings in agents:
 ```typescript
 export const textToAudioAgent = new Agent({
   // ... other config
-  voice: new OpenAIVoice({
+  voice: new GroqVoice({
     speechModel: {
       name: 'tts-1-hd', // or 'tts-1' for faster, lower quality
-      apiKey: process.env.OPENAI_API_KEY,
+      apiKey: process.env.GROQ_API_KEY,
     },
     speaker: 'nova', // Default voice
   }),
@@ -312,7 +312,7 @@ src/mastra/
 
 ## Common Issues
 
-### "OPENAI_API_KEY is not set"
+### "GROQ_API_KEY is not set"
 
 - Make sure you've set the environment variable
 - Check that your API key is valid and has sufficient credits
@@ -326,7 +326,7 @@ src/mastra/
 
 ### "Audio generation failed"
 
-- Check that OpenAI voice models are available in your region
+- Check that Groq voice models are available in your region
 - Verify your API key has access to TTS features
 - Try a different voice or speed setting
 
