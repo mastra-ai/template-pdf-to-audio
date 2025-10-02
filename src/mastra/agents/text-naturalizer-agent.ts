@@ -47,7 +47,7 @@ Prepare scripts that:
 
 The prepared script should be optimized for voice synthesis systems to generate natural and professional audio output.
   `,
-  model: openai('gpt-4o'),
+  model: openai(process.env.MODEL ?? "gpt-4.1"),
   voice: new OpenAIVoice({
     speechModel: {
       name: 'tts-1-hd',
