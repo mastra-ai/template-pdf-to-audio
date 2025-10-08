@@ -19,16 +19,16 @@ npx create-mastra@latest --template pdf-to-audio
 cd pdf-to-audio
 ```
 
-Set up environment variables by copying the example environment file and adding your OpenAI API key:
+Set up environment variables by copying the example environment file and adding your Anthropic API key:
 
 ```bash
 cp .env.local .env
 ```
 
-Then edit `.env` and add your OpenAI API key:
+Then edit `.env` and add your Anthropic API key:
 
 ```
-OPENAI_API_KEY=your_openai_api_key_here
+ANTHROPIC_API_KEY=your_openai_api_key_here
 ```
 
 Run the server:
@@ -55,7 +55,7 @@ https://raw.githubusercontent.com/mastra-ai/template-pdf-to-audio/main/media/mcp
 - **Configurable Speech**: Adjust speaking speed from 0.1x to 4.0x
 - **Text Naturalizer Agent**: Specialized agent for optimizing text for audio conversion
 - **AI Summarization**: Intelligent content compression for focused audio
-- **Professional Voice Synthesis**: High-quality TTS using OpenAI's voice models
+- **Professional Voice Synthesis**: High-quality TTS using Anthropic's voice models
 - **Workflow Orchestration**: Demonstrates chaining tools and agents together
 - **PDF Processing**: Download, extract, and process PDF content
 - **Voice Capabilities**: Turn agent output into audio streams
