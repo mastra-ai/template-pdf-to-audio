@@ -1,4 +1,4 @@
-import { openai } from '@ai-sdk/openai';
+import { groq } from '@ai-sdk/groq';
 import { Agent } from '@mastra/core/agent';
 import { OpenAIVoice } from '@mastra/voice-openai';
 import { summarizePdfTool } from '../tools/summarize-pdf-tool';
@@ -64,7 +64,7 @@ When successful, provide:
 
 Always be helpful and provide clear feedback about the process and results.
   `,
-  model: openai('gpt-4o'),
+  model: groq(process.env.MODEL ?? "llama-3.3-70b-versatile"),
   tools: {
     summarizePdfTool,
     textToSpeechTool,
