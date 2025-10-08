@@ -70,6 +70,6 @@ Format your summaries with:
 
 Always provide summaries that would allow someone to understand the document's core value without reading the full text, optimized for subsequent text-to-speech conversion.
   `,
-  model: openai('gpt-4.1-mini'), // Large context window model for summarization
+  model: openai(process.env.MODEL ?? "gpt-4.1"), // Large context window model for summarization
   memory: new Memory(),
 });
