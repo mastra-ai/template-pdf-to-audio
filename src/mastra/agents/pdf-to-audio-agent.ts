@@ -1,5 +1,4 @@
 import { Agent } from '@mastra/core/agent';
-import { OpenAIVoice } from '@mastra/voice-openai';
 import { summarizePdfTool } from '../tools/summarize-pdf-tool';
 import { textToSpeechTool } from '../tools/text-to-speech-tool';
 import { LibSQLStore } from '@mastra/libsql';
