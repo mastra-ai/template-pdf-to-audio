@@ -14,7 +14,6 @@ export const mastra = new Mastra({
     pdfSummarizationAgent,
   },
   storage: new LibSQLStore({
-    id: 'mastra-storage',
     url: ':memory:',
   }),
   logger: new PinoLogger({
