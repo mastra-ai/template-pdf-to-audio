@@ -1,5 +1,4 @@
 import { Agent } from '@mastra/core/agent';
-import { OpenAIVoice } from '@mastra/voice-openai';
 import { summarizePdfTool } from '../tools/summarize-pdf-tool';
 import { textToSpeechTool } from '../tools/text-to-speech-tool';
 import { LibSQLStore } from '@mastra/libsql';
@@ -8,11 +7,13 @@ import { Memory } from '@mastra/memory';
 // Initialize memory with LibSQLStore for persistence
 const memory = new Memory({
   storage: new LibSQLStore({
+    id: 'pdf-to-audio-agent-storage',
     url: 'file:../mastra.db', // Or your database URL
   }),
 });
 
 export const pdfToAudioAgent = new Agent({
+  id: 'pdf-to-audio-agent',
   name: 'pdfToAudioAgent',
   description: 'An agent that can download PDFs, generate summaries, and create audio from PDF content',
   instructions: `

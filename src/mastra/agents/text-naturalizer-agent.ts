@@ -2,7 +2,8 @@ import { Agent } from '@mastra/core/agent';
 import { OpenAIVoice } from '@mastra/voice-openai';
 
 export const textNaturalizerAgent = new Agent({
-  name: 'textNaturalizerAgent',
+  id: 'text-naturalizer-agent',
+  name: 'Text Naturalizer Agent',
   description: 'An agent specialized in preparing and optimizing text content for audio script generation',
   instructions: `
 You are an expert text preparation specialist who transforms written content into optimized scripts for audio generation. Your goal is to prepare high-quality text content that will be converted to audio by voice synthesis systems.
